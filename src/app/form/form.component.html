@@ -64,5 +64,17 @@
       <ion-col size="3">{{event.time}}</ion-col>
     </ion-row>
   </ion-card>
+  
+    <ion-row>
+      <ion-col size="2" *ngFor="let image of images">
+        <ion-card-title> F </ion-card-title>
+        <ion-card>
+          <ion-card-content>
+            <ion-img src={{image}}></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
 </ion-grid>
 
