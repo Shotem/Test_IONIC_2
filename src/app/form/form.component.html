@@ -1,0 +1,61 @@
+
+<ion-grid>
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-label>Nombre:</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input [(ngModel)]="eventName" placeholder="Nombre del Evento"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-label>Descripción:</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input [(ngModel)]="eventDesc" placeholder="Descripción del Evento"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-label>Fecha:</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-datetime 
+        placeholder="Seleccionar fecha"
+        displayFormat="DD MMM YYYY"
+        monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+        ></ion-datetime>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-label>Hora:</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-datetime [(ngModel)]="eventTime"
+        placeholder="Seleccionar hora"
+        displayFormat="HH:mm"
+        ></ion-datetime>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card *ngIf="eventName!=undefined && eventName!='' && eventDate!=undefined">
+    <ion-row>
+      <ion-col>
+        <ion-button
+        (click)="onClick()">
+          Ingresar Evento
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-grid>
+
