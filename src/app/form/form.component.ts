@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Time } from '@angular/common';
 import { IonDatetime } from '@ionic/angular';
+import { strictEqual } from 'assert';
 
 @Component({
   selector: 'event-form',
@@ -32,19 +33,15 @@ export class FormComponent implements OnInit {
     return false;
   }
   
-  onClick(): void {
-    console.log("Name: " + this.eventName);
-    if (this.eventDesc != undefined && this.eventDesc != ""){
-      console.log("Description: " + this.eventDesc);
-    } else {
-      console.log("No se ingresó descripción");
-    }
-    console.log("Event Date: " + this.eventDate);
-    if (this.eventTime != undefined){
-      console.log("Time: " + this.eventTime);
-    } else {
-      console.log("No se ingresó hora");
-    }
+  onClick(): string {
+    let str:string = "Name: " + this.eventName + "\n" +
+      (this.eventDesc!=undefined && this.eventDesc != "" ? "Descrpition: " + this.eventDesc:"No description") +
+      "\nEvent Date: " + this.eventDate +
+      "\n" + (this.eventTime!=undefined ? "Time: " + this.eventTime: "No time");
+    
+    alert(str);
+    console.log(str);
+    return str;
   }
 
   constructor() { }
