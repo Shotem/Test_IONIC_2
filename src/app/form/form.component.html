@@ -56,5 +56,13 @@
       </ion-col>
     </ion-row>
   </ion-card>
+  <ion-card>
+    <ion-row *ngFor="let event of events">
+      <ion-col size="3">{{event.name}}</ion-col>
+      <ion-col size="3">{{event.desc}}</ion-col>
+      <ion-col size="3">{{event.date}}</ion-col>
+      <ion-col size="3">{{event.time}}</ion-col>
+    </ion-row>
+  </ion-card>
 </ion-grid>
 

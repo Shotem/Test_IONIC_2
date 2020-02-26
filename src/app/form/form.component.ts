@@ -9,43 +9,41 @@ import { strictEqual } from 'assert';
   styleUrls: ['./form.component.scss'],
 })
 
-/*
-class Event {
-  name: string;
-  desc: string;
-  dateTime: Date;
-
-  constructor (eventName: string, eventDesc: string, eventDate: string, eventTime: string){
-    this.name=eventName;
-    this.desc = eventDesc;
-  }
-
-}*/
-
 export class FormComponent implements OnInit {
   //@Input()
   eventName: string;
   eventDesc: string;
   eventDate: string;
   eventTime: string;
-  
+
+  events: Array<Event> = [];
+
   validateDate(): boolean{
     return false;
   }
   
-  onClick(): string {
-    let str:string = "Name: " + this.eventName + "\n" +
-      (this.eventDesc!=undefined && this.eventDesc != "" ? "Descrpition: " + this.eventDesc:"No description") +
-      "\nEvent Date: " + this.eventDate +
-      "\n" + (this.eventTime!=undefined ? "Time: " + this.eventTime: "No time");
-    
-    alert(str);
-    console.log(str);
-    return str;
+  onClick(): void {
+    this.events.push(new Event(this.eventName, this.eventDesc, this.eventDate, this.eventTime));
   }
+
 
   constructor() { }
 
+
+
   ngOnInit() {}
 
+}
+
+class Event {
+  name:string;
+  desc:string;
+  date:string;
+  time:string;
+  constructor( name:string, desc:string, date:string, time:string ){
+    this.name = name;
+    this.desc = desc;
+    this.date = date;
+    this.time = time;
+  }
 }
