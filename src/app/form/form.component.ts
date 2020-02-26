@@ -26,33 +26,7 @@ export class FormComponent implements OnInit {
     this.events.push(new Event(this.eventName, this.eventDesc, this.eventDate, this.eventTime));
   }
 
-  images: Array<string> = [
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg",
-    "https://definicion.mx/wp-content/uploads/2014/04/objeto.jpg"
-  ];
-
   constructor() { }
-
-
-
   ngOnInit() {}
 
 }
