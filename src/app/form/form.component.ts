@@ -24,6 +24,7 @@ export class FormComponent implements OnInit {
   
   onClick(): void {
     this.events.push(new Event(this.eventName, this.eventDesc, this.eventDate, this.eventTime));
+    console.log(this.events.length);
   }
 
   constructor() { }
