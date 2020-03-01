@@ -26,10 +26,11 @@
       </ion-col>
       <ion-col>
         <ion-datetime [(ngModel)]="eventDate"
-        min="2020-02-25" max="2120"
+        min="{{minDate()}}" max="2120"
         placeholder="Seleccionar fecha"
         displayFormat="DD MMM YYYY"
         monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+        
         ></ion-datetime>
       </ion-col>
     </ion-row>
@@ -47,16 +48,24 @@
       </ion-col>
     </ion-row>
   </ion-card>
-  <ion-card *ngIf="eventName!=undefined && eventName!='' && eventDate!=undefined">
+  <ion-card *ngIf="this.eventName == undefined || this.eventName == '' || this.eventDate == undefined">
+    <ion-row *ngIf="this.eventName == undefined || this.eventName == ''">
+      <ion-text color="warning">* El nombre del elvento es inválido</ion-text>
+    </ion-row>
+    <ion-row *ngIf="this.eventDate == undefined">
+      <ion-text color="warning">* La fecha del elvento es inválida</ion-text>
+    </ion-row>
+  </ion-card>
+  <ion-card *ngIf="this.eventName != undefined && this.eventName!='' && this.eventDate != undefined">
     <ion-row>
       <ion-col>
         <ion-button (click)="onClick()">
-          Ingresar Evento
+          Insertar Evento
         </ion-button>
       </ion-col>
     </ion-row>
   </ion-card>
-  <ion-card>
+  <ion-card *ngIf="events.length > 0">
     <ion-row>
       <ion-col size=3>Nombre del Evento</ion-col>
       <ion-col size=3>Descripción del Evento</ion-col>

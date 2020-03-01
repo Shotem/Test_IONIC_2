@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Time } from '@angular/common';
 import { IonDatetime } from '@ionic/angular';
 import { strictEqual } from 'assert';
@@ -10,13 +10,28 @@ import { strictEqual } from 'assert';
 })
 
 export class FormComponent implements OnInit {
-  //@Input()
+  @Input()
   eventName: string;
+  @Input()
   eventDesc: string;
+
   eventDate: string;
   eventTime: string;
 
   events: Array<Event> = [];
+  
+  minDate(): string {
+    let date = new Date();
+    let day:   number = date.getDate();
+    let month: number = date.getMonth()+1;
+    let year:  number = date.getFullYear();
+
+    let str:string = "";
+    str += year.toString()+"-";
+    str += (month < 10 ? "0" : "") + month.toString()+"-";
+    str += ( day  < 10 ? "0" : "") + day.toString();
+    return str;
+  }
 
   validateDate(): boolean{
     return false;
@@ -24,7 +39,7 @@ export class FormComponent implements OnInit {
   
   onClick(): void {
     this.events.push(new Event(this.eventName, this.eventDesc, this.eventDate, this.eventTime));
-    console.log(this.events.length);
+    alert("Evento insertado correctamente");
   }
 
   constructor() { }
