@@ -8,16 +8,18 @@
 
 <ion-content [fullscreen]="true">
   
-  <!--ion-row>
-    <ion-col size="2" *ngFor="let image of images">
-      <ion-card-title> F </ion-card-title>
+  <ion-row>
+    <ion-col size="2" *ngFor="let animal of animals">
       <ion-card>
+        <ion-card-title>
+          {{animal.name}}
+        </ion-card-title>
         <ion-card-content>
-          <ion-img src={{image}}></ion-img>
+          <ion-img [src]="animal.image" (click)="sonidoAnimal(animal)"></ion-img>    
         </ion-card-content>
       </ion-card>
     </ion-col>
-  </ion-row-->
+  </ion-row>
 
-  <event-form></event-form>
+  <!--event-form></event-form-->
 </ion-content>
