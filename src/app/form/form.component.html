@@ -50,10 +50,10 @@
   </ion-card>
   <ion-card *ngIf="this.eventName == undefined || this.eventName == '' || this.eventDate == undefined">
     <ion-row *ngIf="this.eventName == undefined || this.eventName == ''">
-      <ion-text color="warning">* El nombre del elvento es inválido</ion-text>
+      <ion-text color="warning">* El nombre del evento es inválido</ion-text>
     </ion-row>
     <ion-row *ngIf="this.eventDate == undefined">
-      <ion-text color="warning">* La fecha del elvento es inválida</ion-text>
+      <ion-text color="warning">* La fecha del evento es inválida</ion-text>
     </ion-row>
   </ion-card>
   <ion-card *ngIf="this.eventName != undefined && this.eventName!='' && this.eventDate != undefined">
